@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Mi aplicacion</string>
+    <string name="mi_perfil_personal">Mi perfil Personal</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="correo_electronico">Correo Electronico</string>
+    <string name="femenino">Femenino</string>
+    <string name="otro">Otro</string>
+    <string name="masculino">Masculino</string>
+    <string name="pais">Pais</string>
+    <string name="arte">Arte</string>
+    <string name="musica">Musica</string>
+    <string name="deporte">Deporte</string>
+    <string name="lectura">Lectura</string>
+    <string name="resumen_del_perfil">Resumen del Perfil</string>
+    <string name="guardar">Guardar</string>
+    <string name="suscribirse_al_bolet_n">Suscribirse al boletín</string>
+    <string name="nivel_de_satisfacci_n">Nivel de Satisfacción:</string>
+</resources>
