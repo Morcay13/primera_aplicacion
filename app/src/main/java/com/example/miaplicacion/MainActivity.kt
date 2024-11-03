@@ -1,6 +1,8 @@
 package com.example.aplicacion_formulario
 
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.CheckBox
@@ -14,8 +16,8 @@ import android.widget.Switch
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.miaplicacion.R
-//esto es un comentario
-class MainActivity : AppCompatActivity() {
+
+abstract class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     private lateinit var editTextNombre: EditText
     private lateinit var editTextApellido: EditText
@@ -41,19 +43,36 @@ class MainActivity : AppCompatActivity() {
         // Inicializar las vistas
         initViews()
 
-        // Configurar el Spinner
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, paises)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinnerPais.adapter = adapter
+        //Al adaptador le he pasado como parametro esta actividad y el array de  las ciudades
+        //guardado en String
+        ArrayAdapter.createFromResource(
+            this,
+            R.array.ciudades_array,
+            android.R.layout.simple_spinner_item
+        ).also {adapter ->
+            //se indica el layaout para visualizar en dropView
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            //se aplica el spinner al adaptador
+            spinnerPais.adapter = adapter
+        }
+        //fijacion del listener
+        spinnerPais.onItemSelectedListener = this
 
-        // Configurar el SeekBar
-        seekBarSatisfaccion.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                textViewValorSatisfaccion.text = progress.toString()
+        //indicamos el rango de valor del seekBar
+        seekBarSatisfaccion.max = 10
+        //fijacion del listener:
+        seekBarSatisfaccion.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+            //progeso : Int es el valor al ir moviendo el seekBar el usuario, guardamos aqui el valor que queremos tener
+            override fun onProgressChanged (SeekBar : SeekBar?, progreso : Int,fromUser: Boolean ){
+                //actualizamos el textSatisfaccion:
+                textViewValorSatisfaccion.setText("$progreso/10")
             }
-
-            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
-            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+            //metodo abstracto que notifica cuando el usuario ha empezado a tocar el seekbar -> no lo uso
+            override fun onStartTrackingTouch(p0: SeekBar?) {
+            }
+            //metodo abstracto que notifica cuando el usuario ha terminado de tocar el seekbar -> no lo uso
+            override fun onStopTrackingTouch(p0: SeekBar?) {
+            }
         })
 
         // Configurar el botón Guardar
@@ -144,4 +163,5 @@ class MainActivity : AppCompatActivity() {
         seekBarSatisfaccion.progress = savedInstanceState.getInt("satisfaccion")
         switchBoletin.isChecked = savedInstanceState.getBoolean("suscripcion")
     }
+
 }

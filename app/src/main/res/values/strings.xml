@@ -16,4 +16,13 @@
     <string name="guardar">Guardar</string>
     <string name="suscribirse_al_bolet_n">Suscribirse al boletín</string>
     <string name="nivel_de_satisfacci_n">Nivel de Satisfacción:</string>
+
+    <string-array name="ciudades_array">
+        <item>Espanna</item>
+        <item>Israel</item>
+        <item>Alemania</item>
+        <item>Italia</item>
+        <item>Inglaterra</item>
+        <item>Ucrania</item>
+    </string-array>
 </resources>

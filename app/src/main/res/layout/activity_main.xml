@@ -5,33 +5,38 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="com.example.aplicacion_formulario.MainActivity">
+
+
+
+
 
     <!--Titulo que va a tener nuestra aplicacion-->
-
-    <!-- Imagen del perfil que vamos a tener-->
     <TextView
         android:id="@+id/text_view_titulo"
         android:layout_width="235dp"
         android:layout_height="31dp"
-        android:layout_marginTop="4dp"
         android:text="@string/mi_perfil_personal"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_contraintEnd_toEnd0f="parent"
         app:layout_contraitStart_toStartOf="parent" />
 
+    <!-- Imagen del perfil que vamos a tener-->
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="292dp"
+        android:layout_marginEnd="290dp"
         android:src="@drawable/ic_launcher_foreground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_view_titulo" />
 
+    <!-- Nombre -->
     <EditText
         android:id="@+id/edit_text_nombre"
         android:layout_width="295dp"
@@ -43,6 +48,8 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="43dp" />
 
+
+    <!-- Apellidos -->
     <EditText
         android:id="@+id/edit_text_apellido"
         android:layout_width="291dp"
@@ -52,6 +59,8 @@
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/edit_text_nombre" />
 
+
+    <!-- Correo electronico-->
     <EditText
         android:id="@+id/editTextTextEmailAddress"
         android:layout_width="291dp"
@@ -63,6 +72,8 @@
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/edit_text_apellido" />
 
+
+    <!-- Generos -->
     <RadioGroup
         android:id="@+id/radio_group_genero"
         android:layout_width="0dp"
@@ -87,7 +98,7 @@
 
         <RadioButton
             android:id="@+id/radio_button_otro"
-            android:layout_width="wrap_content"
+            android:layout_width="93dp"
             android:layout_height="wrap_content"
             android:text="@string/otro" />
     </RadioGroup>
@@ -105,6 +116,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radio_group_genero" />
 
+
+    <!-- Aficiones -->
     <CheckBox
         android:id="@+id/check_box_1"
         android:layout_width="wrap_content"
@@ -126,14 +139,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/musica"
+        app:layout_constraintStart_toEndOf="@+id/check_box_4"
         app:layout_constraintTop_toBottomOf="@+id/spinner_pais"
-        tools:layout_editor_absoluteX="225dp"
         tools:ignore="MissingConstraints" />
 
     <CheckBox
         android:id="@+id/check_box_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="74dp"
+        android:layout_height="48dp"
         android:text="@string/arte"
         app:layout_constraintStart_toEndOf="@+id/check_box_1"
         app:layout_constraintTop_toBottomOf="@+id/spinner_pais" />
@@ -144,7 +157,7 @@
         android:layout_height="24dp"
         android:layout_marginTop="64dp"
         android:text="@string/nivel_de_satisfacci_n"
-        app:layout_constraintStart_toStartOf="@+id/check_box_1"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/check_box_1" />
 
     <SeekBar
