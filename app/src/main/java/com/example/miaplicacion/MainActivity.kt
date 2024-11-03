@@ -14,7 +14,7 @@ import android.widget.Switch
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.miaplicacion.R
-
+//esto es un comentario
 class MainActivity : AppCompatActivity() {
 
     private lateinit var editTextNombre: EditText
