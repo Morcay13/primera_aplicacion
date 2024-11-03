@@ -20,8 +20,7 @@
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_contraintEnd_toEnd0f="parent"
-        app:layout_contraitStart_toStartOf="parent"
-        tools:layout_editor_absoluteX="81dp" />
+        app:layout_contraitStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
