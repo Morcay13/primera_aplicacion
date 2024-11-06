@@ -19,20 +19,20 @@ import com.example.miaplicacion.R
 
 abstract class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
-    private lateinit var editTextNombre: EditText
-    private lateinit var editTextApellido: EditText
-    private lateinit var editTextEmail: EditText
-    private lateinit var radioGroupGenero: RadioGroup
-    private lateinit var spinnerPais: Spinner
-    private lateinit var checkBox1: CheckBox
-    private lateinit var checkBox2: CheckBox
-    private lateinit var checkBox3: CheckBox
-    private lateinit var checkBox4: CheckBox
-    private lateinit var seekBarSatisfaccion: SeekBar
-    private lateinit var textViewValorSatisfaccion: TextView
-    private lateinit var switchBoletin: Switch
-    private lateinit var buttonGuardar: Button
-    private lateinit var textViewResumenPerfil: TextView
+    lateinit var editTextNombre: EditText
+    lateinit var editTextApellido: EditText
+    lateinit var editTextEmail: EditText
+    lateinit var radioGroupGenero: RadioGroup
+    lateinit var spinnerPais: Spinner
+    lateinit var checkBox1: CheckBox
+    lateinit var checkBox2: CheckBox
+    lateinit var checkBox3: CheckBox
+    lateinit var checkBox4: CheckBox
+    lateinit var seekBarSatisfaccion: SeekBar
+    lateinit var textViewValorSatisfaccion: TextView
+    lateinit var switchBoletin: Switch
+    lateinit var buttonGuardar: Button
+    lateinit var textViewResumenPerfil: TextView
 
     private val paises = arrayOf("España", "Holanda", "Francia", "Inglaterra", "Alemania")
 
